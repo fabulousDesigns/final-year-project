@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+:root {
+  --background-color: #12232e;
+  --background-variant: #98fb98;
+  --primary-color-light: #eedad1;
+  --text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--background-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--background-variant);
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  padding: 40px 0;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidenav .links a {
+  text-decoration: none;
+  display: block;
+  color: var(--background-variant);
+  padding: 18px 0;
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sidenav .links a:hover {
+  color: #f1f1f1;
+}
+.profile {
+  margin: 8px 0;
+  width: 109px;
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--background-variant);
+}
+.img {
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--background-variant);
+  padding: 4px;
+}
+.prof__name {
+  border-bottom: 2px solid var(--background-variant);
+  padding: 8px 0;
+}
+.logout a {
+  padding: 9px;
+  background: var(--background-variant);
+  border-radius: 10px;
+  color: var(--background-color);
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+  height: 100vh;
+  width: calc(100% - 160px);
+}
+.top__bar {
+  width: 100%;
+}
+.top__bar nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  padding: 10px 50px;
+  gap: 5rem;
+}
+#content {
+  width: 100%;
+  display: grid;
+}
+.content__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+}
+.driver__details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+}
+.d__info {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+}
+.request {
+  width: 100%;
+  margin: 10% auto;
+}
+.frm-req {
+  width: 780px;
+  height: 200px;
+  padding: 17px 18px;
+  border-radius: 12px;
+  background: var(--background-variant);
+  color: var(--background-color);
+}
+.dash__title {
+  width: 100%;
+  padding: 7px 0;
+  border-bottom: 2px solid var(--background-variant);
+}
+
+.r__title {
+  letter-spacing: 1px;
+}
+
+.form__input {
+  width: 250px;
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  margin: 13px 0;
+  outline: none;
+}
+.form__input input {
+  width: 100%;
+  height: 100%;
+  color: var(--background-variant);
+  padding-top: 20px;
+  letter-spacing: 1px;
+  border: none;
+  background-color: transparent;
+}
+.form__input label {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  margin-top: 15px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--background-variant);
+}
+.form__input label::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid var(--background-variant);
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+.profile__container {
+  width: 400px;
+  margin: 20%;
+  border: 1px solid var(--background-variant);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn {
+  background: var(--background-variant);
+  color: var(--background-color);
+  outline: none;
+  padding: 5px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}

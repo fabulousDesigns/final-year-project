@@ -1,0 +1,30 @@
+ $getDriver = "SELECT driver_name,email,amb_name,amb_type FROM driver INNER JOIN ambulance ON driver.ambId = ambulance.ambId WHERE dusername = '$driver_name'";
+ $pGetDriver = mysqli_query($con, $getDriver);
+ $rowGetDriver = mysqli_fetch_assoc($pGetDriver);
+
+ $driver_name = $_SESSION["dusername"];
+ $dQuery = "SELECT driver_name FROM `driver` WHERE driver_name= '$driver_name'";
+ $dQres = mysqli_query($con, $dQuery);
+ if ($dQres) {
+ # code...
+ $pdQres = mysqli_fetch_assoc($dQres);
+ //$driverId = $pdQres['driverId'];
+ $driverName = $pdQres['driver_name'];
+ $sql = "SELECT username,phone,u_from,ambulance,destination,booked_At FROM booking WHERE driverName = '$driverName'";
+ $pQuery = mysqli_query($con, $sql);
+ while ($row = mysqli_fetch_assoc($pQuery)) {
+ # code...
+ $username = $row['username'];
+ $phone = $row['phone'];
+ $u_from = $row['u_from'];
+ $ambulance = $row['ambulance'];
+ $destination = $row['destination'];
+ $booked_At = $row['booked_At'];
+ }
+ $location = "SELECT loc_name FROM location WHERE locationId = $u_from";
+ $pLocation = mysqli_query($con, $location);
+ $prow = mysqli_fetch_assoc($pLocation);
+ $loc = $prow['loc_name'];
+ }
+ //echo $driver_name;
+ ?>
